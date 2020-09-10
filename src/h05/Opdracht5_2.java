@@ -11,9 +11,9 @@ public class Opdracht5_2 extends Applet {
 
     public void init() {
         setBackground(Color.white);
-        Valerie = -40;
-        Jeroen = -100;
-        Hans = -80;
+        Valerie = 40;
+        Jeroen = 100;
+        Hans = 80;
     }
     public void paint(Graphics g) {
         //base
@@ -37,11 +37,11 @@ public class Opdracht5_2 extends Applet {
         g.drawString("100",56,85);
         //rects
         g.setColor(Color.red);
-        g.fillRect(100,180,60,Valerie);
+        g.fillRect(100,180,60,-Valerie);
         g.setColor(Color.green);
-        g.fillRect(170,180,60,Jeroen);
+        g.fillRect(170,180,60,-Jeroen);
         g.setColor(Color.blue);
-        g.fillRect(240,180,60,Hans);
+        g.fillRect(240,180,60,-Hans);
         //names
         g.setColor(Color.red);
         g.drawString("Valerie",110,200);
