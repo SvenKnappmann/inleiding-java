@@ -11,9 +11,9 @@ public class Opdracht5_2 extends Applet {
 
     public void init() {
         setBackground(Color.white);
-        Valerie = -4;
-        Jeroen = -10;
-        Hans = -8;
+        Valerie = -40;
+        Jeroen = -100;
+        Hans = -80;
     }
     public void paint(Graphics g) {
         //base
