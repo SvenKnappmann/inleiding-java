@@ -94,7 +94,7 @@ classes
                 schrikkel = 29;
             }
 
-                if (getal == 1)  {
+            if (getal == 1)  {
                 stringMaand = "Januari";
                 stringDagen = "31 dagen";
             }
