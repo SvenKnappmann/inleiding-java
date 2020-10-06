@@ -17,3 +17,4 @@ public class Opdracht11_1 extends Applet{
         } while (teller < 10);
     }
 }
+
