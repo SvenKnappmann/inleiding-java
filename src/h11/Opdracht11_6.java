@@ -15,8 +15,8 @@ public class Opdracht11_6 extends Applet {
         int height = 0;
 
         for (int i = 0; i < amount; i++) {
-            x += -10;
-            y += -10;
+            x -= 10;
+            y -= 10;
             width += 20;
             height += 20;
 
