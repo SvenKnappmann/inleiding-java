@@ -1,10 +1,17 @@
 package h11;
 
 import java.awt.*;
+import java.applet.Applet;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Praktijkopdracht_2 {
+public class Praktijkopdracht_2 extends Applet {
+    Button button;
+    int number = 1;
     public void init() {
-
+        button = new Button("Next");
+        button.addActionListener(new ButtonListener());
+        add(button);
     }
     public void paint(Graphics g) {
 
@@ -18,8 +25,8 @@ public class Praktijkopdracht_2 {
 
         //nummers
 
-        int number;
-        int tableNumber = 1;
+        int displayingNumber;
+        int tableNumber = number;
 
         //assen
 
@@ -30,8 +37,8 @@ public class Praktijkopdracht_2 {
 
         for (teller = 1; teller <= row; teller++) {
             y += 25;
-            number = tableNumber * teller;
-            g.drawString("" + number, 130, y);
+            displayingNumber = tableNumber * teller;
+            g.drawString("" + displayingNumber, 130, y);
         }
         y = 20;
         for (teller = 1; teller <= row; teller++) {
@@ -53,6 +60,15 @@ public class Praktijkopdracht_2 {
             y += 25;
             g.drawString("=", 120, y);
 
+        }
+    }
+    class ButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            number++;
+            if (number == 11) {
+                number = 1;
+            }
+            repaint();
         }
     }
 }
