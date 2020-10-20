@@ -11,6 +11,9 @@ public class Opdracht12_3 extends Applet {
     TextField[] tekstvakken;
     int[] sorter;
 
+    //button
+    Button okButton;
+
     //aantal tekstvakken
     int length = 5;
 
@@ -21,12 +24,15 @@ public class Opdracht12_3 extends Applet {
         tekstvakken = new TextField[length];
         sorter = new int[length];
 
-
         for (int i = 0; i < length; i++) {
             tekstvakken[i] = new TextField("", 30);
-            tekstvakken[i].addActionListener(new Enter());
             add(tekstvakken[i]);
         }
+
+        //ok button
+        okButton = new Button("Ok");
+        okButton.addActionListener(new Enter());
+        add(okButton);
 
     }
 
