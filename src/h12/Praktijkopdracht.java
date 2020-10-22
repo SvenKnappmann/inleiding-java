@@ -30,7 +30,7 @@ public class Praktijkopdracht extends Applet {
     String[] dataTelefoonNummer;
 
     //Counter for okButton
-    int counterOkButton = 0;
+    int counterForOkButton = 0;
 
     //Cords of Strings
     int y = 50;
@@ -79,7 +79,7 @@ public class Praktijkopdracht extends Applet {
         //Loop for Strings
         for (int i = 0; i < dataNaam.length; i++) {
 
-            if (i == counterOkButton)break;
+            if (dataNaam[i].equals(""))break;
 
             g.drawString(dataNaam[i], 70, y);
 
@@ -106,14 +106,14 @@ public class Praktijkopdracht extends Applet {
         public void actionPerformed(ActionEvent e) {
 
             //Converter
-            dataNaam[counterOkButton] = textFieldNaam.getText();
+            dataNaam[counterForOkButton] = textFieldNaam.getText();
 
             //Converter
             String tempTelefoonNummer = textFieldTelefoonNummer.getText();
             getTextFromTextFieldTelefoonNummer = Integer.parseInt(tempTelefoonNummer);
 
             //Convert to string
-            dataTelefoonNummer[counterOkButton] = "" + getTextFromTextFieldTelefoonNummer;
+            dataTelefoonNummer[counterForOkButton] = "" + getTextFromTextFieldTelefoonNummer;
 
             //Loop for Naam and Telefoonnummer
             for (int i = 0; i < dataNaam.length; i++) {
@@ -122,7 +122,10 @@ public class Praktijkopdracht extends Applet {
             }
 
             //Counter for okButton
-            counterOkButton++;
+            counterForOkButton++;
+            if (counterForOkButton >= 10) {
+                counterForOkButton = 0;
+            }
 
             repaint();
 
