@@ -7,32 +7,34 @@ import java.awt.event.*;
 
 public class Praktijkopdracht extends Applet {
 
-    //array
-    String[] data;
-    String[] data2;
-
     //Label naam
     Label labelNaam;
-
     //TextField naam
     TextField textFieldNaam;
 
     //Label telefoonnummer
     Label labelTelefoonNummer;
-
     //TextField telefoonnummer
     TextField textFieldTelefoonNummer;
 
     //OkButton
     Button okButton;
 
+    //String
+    String naam = "";
+    //Array
+    String[] dataNaam;
+    //Sting
+    String telefoonnummer = "";
+    //Array
+    String[] dataTelefoonNummer;
+
     //Counter for okButton
-    int counterOkButton;
+    int counterOkButton = 0;
 
     //Cords of Strings
     int y = 50;
     int y2 = 50;
-
 
     public void init() {
 
@@ -40,11 +42,12 @@ public class Praktijkopdracht extends Applet {
         setSize(500,500);
 
         //arrays
-        data = new String[10];
-        data2 = new String[data.length];
-        for (int i = 0; i < data.length; i++) {
-            data[i] = "";
-            data2[i] = "";
+        dataNaam = new String[10];
+        dataTelefoonNummer = new String[dataNaam.length];
+        //loop for arrays
+        for (int i = 0; i < dataNaam.length; i++) {
+            dataNaam[i] = "";
+            dataTelefoonNummer[i] = "";
         }
 
         //Label naam
@@ -69,46 +72,54 @@ public class Praktijkopdracht extends Applet {
 
     }
     public void paint(Graphics g){
+        //Cords
         y = 50;
         y2 = 50;
-        //string
-        for (int i = 0; i < data.length; i++) {
 
-                g.drawString(data[i], 70, y);
+        //Loop for Strings
+        for (int i = 0; i < dataNaam.length; i++) {
 
-                g.drawString(data2[i], 320, y);
+            if (i == counterOkButton)break;
 
-                y += 15;
+            g.drawString(dataNaam[i], 70, y);
 
-            if (i < data.length && counterOkButton == i) {
+            g.drawString(naam, 20, y2);
 
-                    g.drawString("Naam", 20, y2);
+            g.drawString(dataTelefoonNummer[i], 320, y);
 
-                    g.drawString("Telefoonnummer", 208, y2);
+            g.drawString(telefoonnummer, 208, y2);
 
-                    y2 += 15;
+            y += 15;
+
+            y2 += 15;
 
 
-            }
         }
 
     }
     class OkButton implements ActionListener {
 
+        //Converter
         int getTextFromTextFieldTelefoonNummer;
 
 
         public void actionPerformed(ActionEvent e) {
 
             //Converter
-            data[counterOkButton] = textFieldNaam.getText();
+            dataNaam[counterOkButton] = textFieldNaam.getText();
 
             //Converter
             String tempTelefoonNummer = textFieldTelefoonNummer.getText();
             getTextFromTextFieldTelefoonNummer = Integer.parseInt(tempTelefoonNummer);
 
             //Convert to string
-            data2[counterOkButton] = "" + getTextFromTextFieldTelefoonNummer;
+            dataTelefoonNummer[counterOkButton] = "" + getTextFromTextFieldTelefoonNummer;
+
+            //Loop for Naam and Telefoonnummer
+            for (int i = 0; i < dataNaam.length; i++) {
+                naam = "Naam";
+                telefoonnummer = "Telefoonnummer";
+            }
 
             //Counter for okButton
             counterOkButton++;
