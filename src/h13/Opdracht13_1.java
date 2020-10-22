@@ -1,6 +1,9 @@
 package h13;
 
-public class Opdracht13_1 {
+import java.awt.*;
+import java.applet.Applet;
+
+public class Opdracht13_1 extends Applet {
     public void init() {
 
     }
