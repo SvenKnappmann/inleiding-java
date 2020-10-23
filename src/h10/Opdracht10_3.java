@@ -14,8 +14,8 @@ public class Opdracht10_3 extends Applet    {
     TextField tekstVak;
     Button okButton;
     Label labelEersteZin;
-    String stringMaand;
-    String stringDagen;
+    String stringMaand = "";
+    String stringDagen = "";
 
 /*
 init
@@ -115,7 +115,7 @@ classes
                 stringDagen = "31 dagen";
             }
             //extratje
-            if (getal >= 13) {
+            if (getal > 12 || getal < 1) {
                 stringMaand = "Er zijn niet meer";
                 stringDagen = "dan 12 maanden.";
             }
