@@ -12,14 +12,9 @@ public class Opdracht13_1 extends Applet {
     }
     public void paint(Graphics g) {
 
-        setSize(600,500);
-
-        for (int teller = 0; teller < 100; teller++) {
-
-            tekenDriehoek(g, 200 + teller, 200 + teller, 400 + teller, 200 + teller, 300 + teller, 400 + teller);
+        tekenDriehoek(g,100,100,200,100,150,200);
 
 
-        }
     }
     void tekenDriehoek(Graphics g, int x1, int y1, int x2, int y2, int x3, int y3) {
 
