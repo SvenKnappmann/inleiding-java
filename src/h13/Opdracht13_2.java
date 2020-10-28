@@ -15,7 +15,7 @@ public class Opdracht13_2 extends Applet {
 
 
     }
-    void tekenMuur(Graphics g,int xBegin,int y,int aantalBakstenenPerRij,int aantalRijen) {
+    void tekenMuur(Graphics g,int xBegin,int yBegin,int aantalBakstenenPerRij,int aantalRijen) {
 
         int counter = 0;
 
@@ -29,9 +29,9 @@ public class Opdracht13_2 extends Applet {
                 for (int teller = 0; teller < aantalBakstenenPerRij; teller++) {
 
                     g.setColor(Color.red);
-                    g.fillRect(x, y, width, height);
+                    g.fillRect(x, yBegin, width, height);
                     g.setColor(Color.black);
-                    g.drawRect(x, y, width, height);
+                    g.drawRect(x, yBegin, width, height);
                     x += 50;
 
 
@@ -41,15 +41,15 @@ public class Opdracht13_2 extends Applet {
                 for (int teller = 0; teller < aantalBakstenenPerRij; teller++) {
 
                     g.setColor(Color.red);
-                    g.fillRect(x, y, width, height);
+                    g.fillRect(x, yBegin, width, height);
                     g.setColor(Color.black);
-                    g.drawRect(x, y, width, height);
+                    g.drawRect(x, yBegin, width, height);
                     x += 50;
 
 
                 }
             }
-            y += 20;
+            yBegin += 20;
             counter++;
         }
     }
