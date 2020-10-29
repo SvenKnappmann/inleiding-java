@@ -10,7 +10,7 @@ public class Praktijkopdracht extends Applet {
 
     }
     public void paint(Graphics g) {
-        tekenBos(g,3,3);
+        tekenBos(g,5,3);
     }
     void tekenBoom(Graphics g, int x, int y) {
 
@@ -22,9 +22,13 @@ public class Praktijkopdracht extends Applet {
 
     }
     void tekenBos(Graphics g, int aantalInEenRij, int aantalInEenKolom) {
+
+        int x = 50;
+        int y = 60;
+
         for (int i = 0; i < aantalInEenRij; i++) {
             for (int j = 0; j < aantalInEenKolom; j++) {
-                tekenBoom(g,i * 50, j * 60);
+                tekenBoom(g,x + i * 100, y + j * 160);
             }
         }
     }
